@@ -1,16 +1,14 @@
-const notes = [{
-        title: 'my next trip',
-        body: 'I would like to go to Spain'
-    }, {
-        title: 'Habbits to work on',
-        body: 'Exercise. Eating a bit better'
-    }, {
-        title: 'Office modification',
-        body: 'Get a new seat'
-    }]
+let notes = []
 
 const filters = {
     searchText: ''
+}
+
+// Check for existing data
+const notesJSON = localStorage.getItem('notes')
+
+if (notesJSON !== null) {
+    notes = JSON.parse(notesJSON)
 }
 
 const renderNotes = function (notes, filters) {
@@ -30,7 +28,12 @@ const renderNotes = function (notes, filters) {
 renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function (e) {
-    e.target.textContent = 'Someone click the first button'
+    notes.push({
+        title: '',
+        body: ''
+    })
+    localStorage.setItem('notes', JSON.stringify(notes))
+    renderNotes(notes, filters)
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
@@ -39,8 +42,6 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
 
 })
 
-document.querySelector('#name-form').addEventListener('submit', function (e) {
-    e.preventDefault()
-    console.log(e.target.elements.firstName.value)
-    e.target.elements.firstName.value = ''
+document.querySelector('#filter-by').addEventListener('change', function (e) {
+    console.log(e.target.value)
 })
