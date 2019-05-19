@@ -5,11 +5,11 @@ const filters = {
 }
 
 // Check for existing data
-const notesJSON = localStorage.getItem('notes')
+/* const notesJSON = localStorage.getItem('notes')
 
 if (notesJSON !== null) {
     notes = JSON.parse(notesJSON)
-}
+} */
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
@@ -45,3 +45,16 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
 document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value)
 })
+
+/* const table = {
+    toyota: 'yaris',
+    year: 2005
+}
+
+const tableJSON = JSON.stringify(table)
+console.log(tableJSON)
+localStorage.setItem('table', tableJSON) */
+
+console.log(localStorage.getItem('table'))
+const table = JSON.parse(tableJSON)
+console.log(table)
