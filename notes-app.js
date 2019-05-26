@@ -4,7 +4,7 @@ const filters = {
     searchText: ''
 }
 
-// Check for existing data
+// Check for existing
 const notesJSON = localStorage.getItem('notes')
 
 if (notesJSON !== null) {
