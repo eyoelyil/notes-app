@@ -29,3 +29,9 @@ removeElement.addEventListener('click', function (e) {
     saveNotes(notes)
     location.assign('/index.html')
 })
+
+window.addEventListener('storage', function (e) {
+    if (e.key === 'notes') {
+        notes = JSON.parse(e.newValue)
+    }
+})
