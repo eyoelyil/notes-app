@@ -34,13 +34,5 @@ window.addEventListener('storage', function (e) {
     }
 })
 
-const now = new Date()
-const timestamp = now.getTime()
-
-const myDate = new Date(timestamp)
-console.log(myDate.getFullYear())
-
-/* console.log(`Year: ${now.getFullYear()}`)
-console.log(`Month: ${now.getMonth()}`)
-console.log(`Day of the month: ${now.getDate()}`)
-console.log(`Hour: ${now.getHours()}`) */
+const now = moment()
+console.log(now.toString())
