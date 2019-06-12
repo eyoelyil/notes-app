@@ -34,9 +34,16 @@ window.addEventListener('storage', function (e) {
     }
 })
 
-const now = moment()
-now.subtract(1, 'week').subtract(20, 'days')
-console.log(now.format('MMMM Do , YYYY'))
+const now = moment([2019, 0, 29])
 console.log(now.fromNow())
-const nowTimestamp = now.valueOf()
-console.log(nowTimestamp)
+//now.add(1, 'year').subtract(20, 'days')
+//console.log(now.format('MMMM Do, YYYY'))
+// November 3rd, 2003
+const nowTimeStamp = now.valueOf()
+console.log(moment(nowTimeStamp).toString())
+
+const birthDay = moment()
+birthDay.year(1991).month(0).date(6)
+console.log(birthDay.format('MMM D, YYYY'))
+
+
