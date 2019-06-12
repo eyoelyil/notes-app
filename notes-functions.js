@@ -40,7 +40,7 @@ const generateNoteDOM = function (note) {
         renderNotes(notes, filters)
     })
 
-    // Setup the note title text 
+    // Setup the note title text
     if (note.title.length > 0) {
         textEl.textContent = note.title
     } else {
@@ -64,4 +64,9 @@ const renderNotes = function (notes, filters) {
         const noteEl = generateNoteDOM(note)
         document.querySelector('#notes').appendChild(noteEl)
     })
+}
+
+// Generate the last edited message
+const generateLastEdited = function (timestamp) {
+    return `Last edited ${moment(timestamp).fromNow()}`
 }
